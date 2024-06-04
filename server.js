@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 app.get('/productData',async (req, res) => {
     console.log("test {} ")
-    try {
+   try {
         console.log(`${BASE_URL}/products.json`, headers);
         
         // Step 1: Fetch all products
@@ -29,7 +29,6 @@ app.get('/productData',async (req, res) => {
 
         for (const product of products) {
             const productId = product.id;
-
             if (product.variants && product.variants.length > 0) {
                 const variant = product.variants[0];
                 const inventoryItemId = variant.inventory_item_id;
